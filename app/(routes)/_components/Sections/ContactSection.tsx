@@ -130,7 +130,7 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <p className="text-white/60 text-sm">Location</p>
-                    <p className="text-whitetext">Izmır, Turkey</p>
+                    <p className="text-whitetext">Izmir, Turkey</p>
                   </div>
                 </motion.div>
               </div>
