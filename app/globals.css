@@ -2,20 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  @apply bg-customGreen text-black;
+}
+
+.heroForm {
+  @apply bg-white placeholder:text-slate-500 focus:outline-none focus:ring-0
+  focus:ring-transparent focus:ring-offset-2;
+}
+
+.serviceBg {
+  @apply bg-btncolor;
+}
+.paginationbt {
+  @apply bg-btncolor text-whitetext;
 }
