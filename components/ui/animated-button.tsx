@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import React from "react";
+import { FiArrowUpRight } from "react-icons/fi";
 
 interface AnimatedButtonProps {
   text: string;

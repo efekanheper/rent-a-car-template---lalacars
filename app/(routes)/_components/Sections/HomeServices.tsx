@@ -23,7 +23,7 @@ const HomeServices = () => {
 
         {/* Hizmet kartları */}
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mt-12">
-          {servicesData.map((service, index) => (
+          {servicesData.map((service) => (
             <div
               key={service.id}
               className="rounded-3xl bgone group p-6 md:p-8 hover:shadow-lg transition-shadow duration-300 bg-whitetext"
