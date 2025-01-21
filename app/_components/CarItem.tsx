@@ -1,5 +1,11 @@
 import React from "react";
 
+// CarType türünü tanımlayın
+type CarType = {
+  pricePerDay: number;
+  // Diğer car özelliklerini buraya ekleyin
+};
+
 const CardItem = ({ car }: { car: CarType }) => {
   return (
     <div className="bg-[#1A1F23] rounded-2xl p-4 flex flex-col">
