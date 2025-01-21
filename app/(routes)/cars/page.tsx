@@ -18,6 +18,8 @@ import { LuCar } from "react-icons/lu";
 import { PiGearFineBold } from "react-icons/pi";
 import { IoWalletOutline } from "react-icons/io5";
 
+type FilterType = "categories" | "transmission";
+
 const CarsPage = () => {
   const [filters, setFilters] = useState<{
     categories: string[];
@@ -36,7 +38,11 @@ const CarsPage = () => {
     SetCurrentPage(1);
   }, [filters]);
 
-  const handleFilterChange = (filterType, value, checked) => {
+  const handleFilterChange = (
+    filterType: FilterType,
+    value: string,
+    checked: boolean
+  ) => {
     if (checked) {
       setFilters((prevFilters) => ({
         ...prevFilters,
@@ -156,8 +162,8 @@ const CarsPage = () => {
                   <Checkbox
                     id={transmission}
                     checked={filters.transmission.includes(transmission)}
-                    onCheckedChange={() =>
-                      handleFilterChange("transmission", transmission)
+                    onCheckedChange={(checked) =>
+                      handleFilterChange("transmission", transmission, checked)
                     }
                   />
                   <label
