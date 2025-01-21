@@ -36,16 +36,18 @@ const CarsPage = () => {
     SetCurrentPage(1);
   }, [filters]);
 
-  const handleFilterChange = (
-    filterType: "categories" | "transmission",
-    value: string
-  ) => {
-    setFilters((prevFilters) => ({
-      ...prevFilters,
-      [filterType]: prevFilters[filterType].includes(value)
-        ? prevFilters[filterType].filter((item) => item !== value)
-        : [...prevFilters[filterType], value],
-    }));
+  const handleFilterChange = (filterType, value, checked) => {
+    if (checked) {
+      setFilters((prevFilters) => ({
+        ...prevFilters,
+        [filterType]: [...prevFilters[filterType], value],
+      }));
+    } else {
+      setFilters((prevFilters) => ({
+        ...prevFilters,
+        [filterType]: prevFilters[filterType].filter((item) => item !== value),
+      }));
+    }
   };
 
   const handlePriceRangeChange = (newRange: [number, number]) => {
@@ -123,7 +125,7 @@ const CarsPage = () => {
                     id={category}
                     checked={filters.categories.includes(category)}
                     onCheckedChange={(checked) =>
-                      handleFilterChange("categories", category)
+                      handleFilterChange("categories", category, checked)
                     }
                     className="mr-2"
                   />

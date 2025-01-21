@@ -151,11 +151,6 @@ const ContactSection = () => {
                   </motion.a>
                 ))}
               </div>
-              <p className="text-base leading-relaxed text-footer">&apos;</p>
-              <p>
-                It&apos;s important to us that you&apos;re satisfied with our
-                service.
-              </p>
             </div>
           </motion.div>
         </div>
