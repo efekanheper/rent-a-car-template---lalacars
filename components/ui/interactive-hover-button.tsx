@@ -1,86 +1,61 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import React, { useState } from "react";
+import { ArrowRight } from "react-feather";
 
-interface InteractiveHoverButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  text?: string;
+interface InteractiveHoverButtonProps {
+  children: React.ReactNode;
+  className?: string;
 }
 
-export const InteractiveHoverButton = React.forwardRef<
+const InteractiveHoverButton = React.forwardRef<
   HTMLButtonElement,
   InteractiveHoverButtonProps
->(({ text = "Button", className, ...props }, ref) => {
+>(({ children, className }, ref) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
     <motion.button
       ref={ref}
+      className={`relative overflow-hidden ${className}`}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
-      className={cn(
-        "group relative flex items-center justify-center overflow-hidden rounded-full border border-btncolor bg-btncolor px-6 py-3 font-semibold text-white",
-        className
-      )}
-      {...props}
     >
-      <div className="relative flex items-center gap-2">
-        {/* Ana metin animasyonu */}
-        <div className="overflow-hidden">
-          <motion.span
-            key="button-text"
+      <div className="relative z-10 flex items-center">
+        {children}
+        <div className="ml-2">
+          <motion.div
             animate={{
-              y: isHovered ? [0, 20, -24, 0] : 0,
-              opacity: isHovered ? [1, 0, 0, 1] : 1,
-              transition: {
-                duration: isHovered ? 0.8 : 0.2,
-                ease: "easeInOut",
-                times: isHovered ? [0, 0.3, 0.31, 1] : [0, 1],
-              },
+              x: isHovered ? 5 : 0,
             }}
-            className="z-10 inline-block"
+            transition={{
+              duration: 0.2,
+              ease: "easeInOut",
+              times: isHovered ? [0, 0.3, 0.31, 1] : [0, 1],
+            }}
           >
-            {text}
-          </motion.span>
+            <ArrowRight size={14} className="text-btncolor" />
+          </motion.div>
         </div>
-
-        <div className="flex items-center gap-2">
-          {/* Sabit circle */}
-          <div className="h-6 w-6 flex items-center justify-center rounded-full bg-green overflow-hidden">
-            {/* Ok animasyonu */}
-            <motion.div
-              animate={{
-                y: isHovered ? [0, 20, -24, 0] : 0,
-                opacity: isHovered ? [1, 0, 0, 1] : 1,
-                transition: {
-                  duration: isHovered ? 0.8 : 0.2,
-                  ease: "easeInOut",
-                  times: isHovered ? [0, 0.3, 0.31, 1] : [0, 1],
-                },
-              }}
-            >
-              <ArrowRight size={14} className="text-btncolor" />
-            </motion.div>
-          </div>
-        </div>
-
-        {/* Hover background efekti */}
-        <motion.div
-          animate={{
-            width: isHovered ? "100%" : "0%",
-          }}
-          transition={{
-            duration: 0.2,
-            ease: [0.6, 0.01, -0.05, 0.9],
-          }}
-          className="absolute left-0 top-0 h-full "
-        />
       </div>
+
+      {/* Hover background efekti */}
+      <motion.div
+        animate={{
+          width: isHovered ? "100%" : "0%",
+        }}
+        transition={{
+          duration: 0.2,
+          ease: [0.6, 0.01, -0.05, 0.9],
+        }}
+        className="absolute left-0 top-0 h-full bg-gray-200"
+      />
     </motion.button>
   );
 });
 
 InteractiveHoverButton.displayName = "InteractiveHoverButton";
+
+export default InteractiveHoverButton;
