@@ -11,7 +11,7 @@ import { Badge } from "@/components/ui/badge";
 import { FaUser } from "react-icons/fa";
 import { GiCarDoor, GiDiscGolfBag } from "react-icons/gi";
 import { TbAutomaticGearbox } from "react-icons/tb";
-import { Button } from "@/components/ui/button";
+
 import Link from "next/link";
 import { FiArrowUpRight } from "react-icons/fi";
 

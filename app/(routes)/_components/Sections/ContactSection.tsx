@@ -1,12 +1,9 @@
 "use client";
-
-import { Form } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import {
   Mail,
   MapPin,
   Phone,
-  ArrowRight,
   Linkedin,
   Github,
   Twitter,
@@ -154,7 +151,7 @@ const ContactSection = () => {
                   </motion.a>
                 ))}
               </div>
-              <p className="text-base leading-relaxed text-footer">{`'`}</p>
+              <p className="text-base leading-relaxed text-footer">&apos;</p>
             </div>
           </motion.div>
         </div>

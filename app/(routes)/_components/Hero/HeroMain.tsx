@@ -4,15 +4,12 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from "@/components/ui/carousel";
 import { sliderData } from "@/constans";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+
 import Autoplay from "embla-carousel-autoplay";
 import HeroForm from "./HeroForm";
-import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 import gsap from "gsap";
 import { motion } from "framer-motion";
 

@@ -3,7 +3,6 @@ import SectionTitle from "../SectionTitle";
 import { servicesData } from "@/constans";
 import Image from "next/image";
 import ButtonArrowRight from "./ButtonArrowRight";
-import { Button } from "@/components/ui/button";
 
 const HomeServices = () => {
   return (

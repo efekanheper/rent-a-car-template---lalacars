@@ -2,6 +2,7 @@
 
 import React, { useCallback, useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import Image from "next/image"; // next/image kullanıyoruz
 
 interface Logo {
   name: string;
@@ -90,9 +91,11 @@ const LogoColumn: React.FC<LogoColumnProps> = React.memo(
               },
             }}
           >
-            <img
+            <Image
               src={logos[currentIndex].img}
               alt={logos[currentIndex].name}
+              width={150} // Width and height for optimization
+              height={150}
               className="h-40 w-40 max-h-[100%] max-w-[100%] object-contain md:h-36 md:w-36"
             />
           </motion.div>
@@ -101,6 +104,9 @@ const LogoColumn: React.FC<LogoColumnProps> = React.memo(
     );
   }
 );
+
+// Add a display name to avoid the eslint warning
+LogoColumn.displayName = "LogoColumn";
 
 interface LogoCarouselProps {
   columnCount?: number;

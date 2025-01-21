@@ -4,7 +4,6 @@ import SectionTitle from "../SectionTitle";
 import { carsData } from "@/constans";
 
 import CardItem from "../CardItem";
-import { Card, CardContent } from "@/components/ui/card";
 import {
   Carousel,
   CarouselContent,
