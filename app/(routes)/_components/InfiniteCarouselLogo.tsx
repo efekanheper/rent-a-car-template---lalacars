@@ -1,6 +1,6 @@
 "use client";
 
-import React, { type SVGProps } from "react";
+import React from "react";
 import { GradientHeading } from "@/components/ui/gradient-heading";
 import { LogoCarousel } from "@/components/ui/logo-carousel";
 

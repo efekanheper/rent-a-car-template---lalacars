@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FiArrowUpRight } from "react-icons/fi";
+import React from "react";
 
 interface AnimatedButtonProps {
   text: string;

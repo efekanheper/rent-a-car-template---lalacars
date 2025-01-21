@@ -154,6 +154,7 @@ const ContactSection = () => {
                   </motion.a>
                 ))}
               </div>
+              <p className="text-base leading-relaxed text-footer">{`'`}</p>
             </div>
           </motion.div>
         </div>

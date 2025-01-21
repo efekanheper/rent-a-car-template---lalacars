@@ -7,7 +7,6 @@ import CardItem from "../_components/CardItem";
 import {
   Pagination,
   PaginationContent,
-  PaginationEllipsis,
   PaginationItem,
   PaginationLink,
   PaginationNext,

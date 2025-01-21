@@ -1,5 +1,6 @@
 import { InfiniteSlider } from "@/components/ui/infinite-slider";
 import { logoData } from "@/constans"; // Logo verilerini içeren dosyayı import edin
+import Image from "next/image";
 
 export function InfiniteSliderBasic() {
   return (
@@ -12,11 +13,11 @@ export function InfiniteSliderBasic() {
       </p>
       <InfiniteSlider gap={24} reverse>
         {logoData.map((logo, index) => (
-          <img
+          <Image
             key={index}
             src={logo.image}
             alt={`Logo ${index + 1}`}
-            className="h-[80px] md:h-[120px] max-w-full mt-8" // Logo boyutlarını responsive yapalım
+            className="h-[80px] md:h-[120px] max-w-full mt-8"
           />
         ))}
       </InfiniteSlider>

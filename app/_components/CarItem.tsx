@@ -1,4 +1,6 @@
-const CardItem = ({ car }: { car: any }) => {
+import React from "react";
+
+const CardItem = ({ car }: { car: CarType }) => {
   return (
     <div className="bg-[#1A1F23] rounded-2xl p-4 flex flex-col">
       {/* ... existing car image and details ... */}

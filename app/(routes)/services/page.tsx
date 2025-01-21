@@ -1,7 +1,6 @@
 import React from "react";
 import SectionBg from "../_components/SectionBg";
 import HomeServices from "../_components/Sections/HomeServices";
-import AboutVision from "../_components/Sections/AboutVision";
 import ServicesAccordion from "../_components/Sections/ServicesAccordion";
 
 const ServicesPage = () => {

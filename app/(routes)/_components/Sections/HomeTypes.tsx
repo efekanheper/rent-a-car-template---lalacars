@@ -1,6 +1,5 @@
 import { homeTypesData } from "@/constans";
 import Image from "next/image";
-import Link from "next/link";
 import React from "react";
 import { FiArrowRight, FiArrowUpRight } from "react-icons/fi";
 import ButtonArrowRight from "./ButtonArrowRight";
