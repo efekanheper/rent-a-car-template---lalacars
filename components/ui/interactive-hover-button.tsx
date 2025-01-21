@@ -2,11 +2,11 @@
 
 import { cn } from "@/lib/utils";
 import { ArrowRight } from "lucide-react";
-import { motion } from "framer-motion";
+import { HTMLMotionProps, motion } from "framer-motion";
 import React, { useState } from "react";
 
 interface InteractiveHoverButtonProps
-  extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "onDrag"> {
+  extends Omit<HTMLMotionProps<"button">, "onDrag"> {
   text?: string;
 }
 
