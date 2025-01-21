@@ -1,3 +1,5 @@
+"use client";
+
 import { cn } from "@/lib/utils";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
@@ -14,9 +16,6 @@ export const InteractiveHoverButton = React.forwardRef<
 >(({ text = "Button", className, ...props }, ref) => {
   const [isHovered, setIsHovered] = useState(false);
 
-  // Framer Motion ile uyumsuz özelliklerden ayırma
-  const { onDrag, ...restProps } = props;
-
   return (
     <motion.button
       ref={ref}
@@ -26,7 +25,7 @@ export const InteractiveHoverButton = React.forwardRef<
         "group relative flex items-center justify-center overflow-hidden rounded-full border border-btncolor bg-btncolor px-6 py-3 font-semibold text-white",
         className
       )}
-      {...restProps} // burada sadece uyumlu özellikleri aktarıyoruz
+      {...props}
     >
       <div className="relative flex items-center gap-2">
         {/* Ana metin animasyonu */}
