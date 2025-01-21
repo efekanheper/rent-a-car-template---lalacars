@@ -131,7 +131,11 @@ const CarsPage = () => {
                     id={category}
                     checked={filters.categories.includes(category)}
                     onCheckedChange={(checked) =>
-                      handleFilterChange("categories", category, checked)
+                      handleFilterChange(
+                        "categories",
+                        category,
+                        Boolean(checked)
+                      )
                     }
                     className="mr-2"
                   />
@@ -163,7 +167,11 @@ const CarsPage = () => {
                     id={transmission}
                     checked={filters.transmission.includes(transmission)}
                     onCheckedChange={(checked) =>
-                      handleFilterChange("transmission", transmission, checked)
+                      handleFilterChange(
+                        "transmission",
+                        transmission,
+                        Boolean(checked)
+                      )
                     }
                   />
                   <label
