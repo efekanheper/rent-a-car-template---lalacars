@@ -39,7 +39,7 @@ const ContactSection = () => {
           variants={fadeInUp}
           className="text-5xl font-bold text-center mb-16 font-poppins text-btncolor"
         >
-          Let s Connect
+          Lets Connect
         </motion.h1>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 px-4">

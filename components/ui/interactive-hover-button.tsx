@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import React, { useState } from "react";
 
 interface InteractiveHoverButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "onDrag"> {
   text?: string;
 }
 
@@ -28,7 +28,6 @@ export const InteractiveHoverButton = React.forwardRef<
       {...props}
     >
       <div className="relative flex items-center gap-2">
-        {/* Ana metin animasyonu */}
         <div className="overflow-hidden">
           <motion.span
             key="button-text"
@@ -48,9 +47,7 @@ export const InteractiveHoverButton = React.forwardRef<
         </div>
 
         <div className="flex items-center gap-2">
-          {/* Sabit circle */}
           <div className="h-6 w-6 flex items-center justify-center rounded-full bg-green overflow-hidden">
-            {/* Ok animasyonu */}
             <motion.div
               animate={{
                 y: isHovered ? [0, 20, -24, 0] : 0,
@@ -67,7 +64,6 @@ export const InteractiveHoverButton = React.forwardRef<
           </div>
         </div>
 
-        {/* Hover background efekti */}
         <motion.div
           animate={{
             width: isHovered ? "100%" : "0%",
@@ -76,7 +72,7 @@ export const InteractiveHoverButton = React.forwardRef<
             duration: 0.2,
             ease: [0.6, 0.01, -0.05, 0.9],
           }}
-          className="absolute left-0 top-0 h-full "
+          className="absolute left-0 top-0 h-full"
         />
       </div>
     </motion.button>
